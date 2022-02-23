@@ -36,3 +36,61 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  border: 2px solid pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gamecontent {
+  border: 1px solid black;
+  width: 90%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentHeader {
+  border: 1px solid blue;
+  width: 100%;
+}
+
+#box {
+  display: flex;
+  /* align-items: flex-end; */
+  width: 80%;
+  border: 1px solid green;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+#resultatBox {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  /* justify-content: space-between; */
+  /* align-items: flex-end; */
+  width: 50%;
+  align-items: center;
+  background-color: rgb(73, 168, 73);
+  padding: 2%;
+  justify-content: space-around;
+}
+
+#checkAnswer {
+  padding: 2%;
+}
+
+#resultatText {
+  font-weight: bold;
+}
+
+#goToNext {
+  padding-right: 20%;
+  padding-left: 20%;
+}
