@@ -6,14 +6,58 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 .bar {
-  background-color: blue;
+  background-color: #4883F4;
   height: 100%;
+  width: 100%;
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+}
+.left-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 1em;
+}
+
+.right-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 1em;
+}
+
+.wrapper {
+  border: 1px solid;
+  padding: 0.6em;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1em;
+  margin-top: 1em;
+}
+
+.header-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40%;
+  border-bottom: 0.5px solid;
+  padding: 0.6em;
+}
+.restart {
+  margin-right: 2em;
+  background-color: #7CA3EE;
+}
+.back {
+  margin-left: 2em;
+  border-bottom: 1px #7CA3EE;
+}
+
+.progress-bar {
+  background-color: #7CA3EE;
   width: 100%;
 }

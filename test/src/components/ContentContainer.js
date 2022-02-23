@@ -1,9 +1,11 @@
 import React from 'react'
 import ContentHeader from './ContentHeader'
+import ProgressBar from './ProgressBar'
 const ContentContainer = () => {
   return (
-    <div className='gamecontent'>
+    <div className='wrapper'>
       <ContentHeader></ContentHeader>
+      <ProgressBar></ProgressBar>
     </div>
   )
 }
