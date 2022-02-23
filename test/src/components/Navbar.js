@@ -3,7 +3,14 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div className='bar'>
-      <p>wtf</p>
+      <div className='left-div'>
+        <p>logo</p>
+        <p>NyttNavn</p>
+      </div>
+      <div className='right-div'>
+        <p>Hei Priscilla</p>
+        <p>Logg ut</p>
+      </div>
     </div>
   )
 }
