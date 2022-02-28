@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Task = () => {
-  return (
+const Task = ({ sentence, missingWord }) => {
+  return ( 
     <div className='task'>
-      <p>Yosef sin familie bor i Eritrea</p>
+      {sentence.map((word) => (<p> {word} </p>))}
     </div>
   )
 }
