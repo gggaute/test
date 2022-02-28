@@ -8,8 +8,8 @@ const Navbar = () => {
         <p>NyttNavn</p>
       </div>
       <div className='right-div'>
-        <p>Hei Priscilla</p>
-        <p>Logg ut</p>
+        <p>Forrige oppgave</p>
+        <p>Neste oppgave</p>
       </div>
     </div>
   )

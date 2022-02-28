@@ -33,7 +33,7 @@ code {
 }
 
 .wrapper {
-  border: 1px solid;
+  border: 1px solid #7CA3EE;
   padding: 0.6em;
   display: grid;
   grid-template-columns: 1fr;
@@ -45,13 +45,15 @@ code {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 40%;
-  border-bottom: 0.5px solid;
+  border-bottom: 0.5px solid #7CA3EE;
   padding: 0.6em;
 }
+
 .restart {
   margin-right: 2em;
   background-color: #7CA3EE;
 }
+
 .back {
   margin-left: 2em;
   border-bottom: 1px #7CA3EE;
@@ -60,4 +62,33 @@ code {
 .progress-bar {
   background-color: #7CA3EE;
   width: 100%;
+}
+
+.question {
+  border: 0.1px solid #7CA3EE;
+}
+
+.task {
+  border: 0.1px solid #7CA3EE;
+}
+
+.word-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.word-grid > div {
+  background-color: #eee;
+  margin: 1em;
+}
+.word-grid > div:nth-child(odd) {
+  background-color: #ddd;
+}
+
+.word {
+  font-size: 12px;
+}
+
+p {
+  margin: 1em;
 }
