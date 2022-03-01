@@ -1,15 +1,16 @@
 import React from 'react'
+import logo from "./img/logo.png"
 
 const Navbar = () => {
   return (
     <div className='bar'>
       <div className='left-div'>
-        <p>logo</p>
-        <p>NyttNavn</p>
+        <img id="logo" src={logo} alt="Norsk for Ungdom logo" width="130"></img>
+        <h1 id="navbarTitle">Nytt Navn</h1>
       </div>
       <div className='right-div'>
-        <p>Forrige oppgave</p>
-        <p>Neste oppgave</p>
+        <button id="previousQ">{"<-- Forrige"}</button>
+        <button id="nextQ">{"Neste -->"}</button>
       </div>
     </div>
   )

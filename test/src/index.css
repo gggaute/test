@@ -1,29 +1,65 @@
 body {
-  font-family: Poppins;
+  font-family: Arial;
 }
 
+
+/* NAVBAR */
+
 .bar {
-  background-color: #4883F4;
+  background-color: #8AA9E4;
   height: 100%;
   width: 100%;
   margin-top: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: end;
+  align-items: center;
+  /* border: 1px solid red; */
 }
+
 .left-div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.7fr 1fr;
   margin-left: 1em;
+  align-items: center;
+  /* border: 1px solid purple; */
+  height: 100%;
 }
+
+/* #logo {
+
+} */
+
+#navbarTitle {
+  font-size: 1.5em;
+  /* border: 1px solid brown; */
+  display: grid;
+  justify-content: center;
+}
+
 
 .right-div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-left: 1em;
+  grid-template-columns: auto auto;
+  /* margin-left: 1em; */
+  align-items: center;
+  justify-content: end;
+  /* border: 1px solid pink; */
+  height: 100%;
+
 }
 
-.wrapper {
+#previousQ, #nextQ {
+  margin-right: 1em;
+  background-color: #BDD3FC;
+  border: 0;
+  box-shadow: 1px 1px 4px #8AA9E4;
+  padding: 1vmin;
+}
+
+
+/* PAGE-CONTENT */
+
+.wrapper { /* Page/game content */
   border: 1px solid #7CA3EE;
   padding: 0.6em;
   display: grid;
@@ -49,6 +85,9 @@ body {
   margin-left: 2em;
   border-bottom: 1px #7CA3EE;
 }
+
+
+/* GAME-CONTENT */
 
 .progress-bar {
   background-color: #7CA3EE;
