@@ -57,8 +57,8 @@ const ContentContainer = () => {
     'Eritrea'
   ])
 
-  const [missingWord, setMissingWord] = useState('familie')
-
+  const missingWord = 'familie'
+  
   return (
     <div className='wrapper'>
       <ContentHeader></ContentHeader>

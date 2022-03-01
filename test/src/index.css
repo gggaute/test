@@ -90,3 +90,7 @@ p {
 .wordBox {
   cursor: pointer;
 }
+.empty {
+  color: white;
+  border: 0.1em solid grey;
+}
