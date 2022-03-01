@@ -52,7 +52,7 @@ body {
   margin-right: 1em;
   background-color: #BDD3FC;
   border: 0;
-  box-shadow: 1px 1px 4px #8AA9E4;
+  /* box-shadow: 1px 1px 4px #8AA9E4; */
   padding: 1vmin;
 }
 
@@ -128,4 +128,39 @@ p {
 }
 .wordBox {
   cursor: pointer;
+}
+
+
+/* RESULT-BOX */
+
+#resultBox {
+  /* border: 1px solid red; */
+  background-color: #C6CAC7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  justify-self: center;
+  padding: 3%;
+}
+
+#resultText{
+  /* border: 1px solid purple; */
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+}
+
+#goToNext {
+  /* border: 1px solid pink; */
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  font-size: 1.2em;
+  height: 120%;
+  border: 1px solid darkgrey;
 }

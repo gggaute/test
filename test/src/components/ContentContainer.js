@@ -6,6 +6,7 @@ import Task from './Task'
 import Words from './Words'
 import { useState } from 'react'
 import CheckAnswer from './CheckAnswer'
+import AnswerReply from './AnswerReply'
 
 
 const ContentContainer = () => {
@@ -67,6 +68,7 @@ const ContentContainer = () => {
       <Task missingWord={missingWord} sentence={sentence}></Task>
       <Words onClick={onClickedWord} words={words} missingWord={missingWord}></Words>
       <CheckAnswer onClick={checkAnswer}></CheckAnswer>
+      <AnswerReply></AnswerReply>
     </div>
   )
 }
