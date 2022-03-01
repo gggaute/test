@@ -12,14 +12,33 @@ const ContentContainer = () => {
 
   const onClickedWord = (clickedWord) => {
     console.log("click", clickedWord);
-      //foreløpig gjøres sjekken etter riktig svar her. skal vel være sånn at man trykker sjekk svar
-      setSentence(sentence.map((w) => w === missingWord ? w = clickedWord : w = w))
+    // first clicked word
+    if (previousClickedWord === '') {
+      setSentence(sentence.map((w) => ((w === missingWord)) ? w = clickedWord : w = w))
       setWords(words.filter((word) => word !== clickedWord))
+    }
+    else {
+      setSentence(sentence.map((w) => ((w === previousClickedWord)) ? w = clickedWord : w = w))
+      setWords([...words, previousClickedWord])
+      console.log(words)
+      setWords(words.filter((word) => word !== clickedWord))
+    }
+    setPreviousClickedWord(clickedWord)
   }
 
+  const [previousClickedWord, setPreviousClickedWord] = useState('')
+
   const checkAnswer = () => {
-    console.log("check answer")
+      if (sentence.includes(missingWord)) {
+        var answer = true
+      }
+      else {
+        var answer = false
+      }
+    console.log(answer)
   }
+
+  const question = 'Hvilket ord mangler?'
 
   const [words, setWords] = useState(['familie',
     'har',
@@ -44,7 +63,7 @@ const ContentContainer = () => {
     <div className='wrapper'>
       <ContentHeader></ContentHeader>
       <ProgressBar></ProgressBar>
-      <Question></Question>
+      <Question question={question}></Question>
       <Task missingWord={missingWord} sentence={sentence}></Task>
       <Words onClick={onClickedWord} words={words} missingWord={missingWord}></Words>
       <CheckAnswer onClick={checkAnswer}></CheckAnswer>
