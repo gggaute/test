@@ -1,8 +1,9 @@
 import React from 'react'
 
-const CheckAnswer = ({ onClick }) => {
+const CheckAnswer = ({ onClick, disabled }) => {
+
   return (
-    <button onClick={onClick}>
+    <button id="checkAnswerBtn" onClick={onClick} disabled={disabled}>
       Sjekk svar
     </button>
   )

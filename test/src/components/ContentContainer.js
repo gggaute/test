@@ -11,39 +11,47 @@ import $ from "jquery"
 
 
 const ContentContainer = () => {
+  // $(".taskPBorder").text("").addClass(".taskPBorderEmpty");
 
   const onClickedWord = (clickedWord) => {
     console.log("click", clickedWord);
-    // first clicked word
-    // $("#resultBox").toggleClass("riktig");
+    $("#resultBox").removeClass();
+
     if (previousClickedWord === '') {
-      setSentence(sentence.map((w) => ((w === missingWord)) ? w = clickedWord : w = w))
       setWords(words.filter((word) => word !== clickedWord))
+      setSentence(sentence.map((w) => ((w === missingWord)) ? w = clickedWord : w))
     }
     else {
-      setSentence(sentence.map((w) => ((w === previousClickedWord)) ? w = clickedWord : w = w))
       setWords([...words.filter(word => word !== clickedWord), previousClickedWord])
+      setSentence(sentence.map((w) => ((w === previousClickedWord)) ? w = clickedWord : w))
     }
     setPreviousClickedWord(clickedWord)
   }
 
   const [previousClickedWord, setPreviousClickedWord] = useState('')
 
+
+  const [disabled, setDisabled] = useState(false)
   const checkAnswer = () => {
+    var answer;
       if (sentence.includes(missingWord)) {
-        var answer = true
-        $("#resultBox").toggleClass("riktig");
+        answer = true
+        $("#resultBox").removeClass();
+        $("#resultBox").addClass("riktig");
+        setDisabled(true)
       }
       else {
-        var answer = false
-        $("#resultBox").toggleClass("feil");
+        answer = false
+        $("#resultBox").removeClass();
+        $("#resultBox").addClass("feil");
       }
     console.log(answer)
   }
 
   const question = 'Hvilket ord mangler?'
 
-  const [words, setWords] = useState(['familie',
+  const [words, setWords] = useState([
+    'familie',
     'har',
     'fornøyd',
     'leilighet',
@@ -61,15 +69,17 @@ const ContentContainer = () => {
   ])
 
   const missingWord = 'familie'
+
+  const [missingWordIndex] = useState(sentence.indexOf(missingWord))
   
   return (
     <div className='wrapper'>
       <ContentHeader></ContentHeader>
       <ProgressBar></ProgressBar>
       <Question question={question}></Question>
-      <Task missingWord={missingWord} sentence={sentence}></Task>
-      <Words onClick={onClickedWord} words={words} missingWord={missingWord}></Words>
-      <CheckAnswer onClick={checkAnswer}></CheckAnswer>
+      <Task missingWord={missingWord} previousClickedWord={previousClickedWord} sentence={sentence} missingWordIndex={missingWordIndex}></Task>
+      <Words onClick={onClickedWord} words={words} disabled={disabled} missingWord={missingWord}></Words>
+      <CheckAnswer onClick={checkAnswer} disabled={disabled}></CheckAnswer>
       <AnswerReply></AnswerReply>
     </div>
   )
