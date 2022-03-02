@@ -7,6 +7,7 @@ import Words from './Words'
 import { useState } from 'react'
 import CheckAnswer from './CheckAnswer'
 import AnswerReply from './AnswerReply'
+import $ from "jquery"
 
 
 const ContentContainer = () => {
@@ -14,6 +15,7 @@ const ContentContainer = () => {
   const onClickedWord = (clickedWord) => {
     console.log("click", clickedWord);
     // first clicked word
+    // $("#resultBox").toggleClass("riktig");
     if (previousClickedWord === '') {
       setSentence(sentence.map((w) => ((w === missingWord)) ? w = clickedWord : w = w))
       setWords(words.filter((word) => word !== clickedWord))
@@ -32,9 +34,11 @@ const ContentContainer = () => {
   const checkAnswer = () => {
       if (sentence.includes(missingWord)) {
         var answer = true
+        $("#resultBox").toggleClass("riktig");
       }
       else {
         var answer = false
+        $("#resultBox").toggleClass("feil");
       }
     console.log(answer)
   }

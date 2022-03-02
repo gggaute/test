@@ -71,19 +71,22 @@ body {
 .header-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 40%;
   border-bottom: 0.5px solid #7CA3EE;
   padding: 0.6em;
+  /* border: 1px solid red; */
 }
 
-.restart {
-  margin-right: 2em;
-  background-color: #7CA3EE;
+.cHText {
+  font-size: 1.5em;
+  margin-left: 1em;
 }
 
-.back {
-  margin-left: 2em;
-  border-bottom: 1px #7CA3EE;
+.kapLink {
+  display: grid;
+  justify-content: end;
+  margin-right: 1em;
+  font-size: 1.2em;
+  align-items: center;
 }
 
 
@@ -133,9 +136,31 @@ p {
 
 /* RESULT-BOX */
 
-#resultBox {
+#resultBox.grå {
   /* border: 1px solid red; */
   background-color: #C6CAC7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  justify-self: center;
+  padding: 3%;
+}
+
+#resultBox.riktig{
+  background-color: #61d47e;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  justify-self: center;
+  padding: 3%;
+}
+
+#resultBox.feil {
+  background-color: #d46161;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-around;
