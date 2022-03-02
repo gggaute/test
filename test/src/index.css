@@ -150,11 +150,17 @@ body {
   border: 1px solid darkgrey;
   background-color: #eee;
   padding: .3em;
+  min-width: 2em;
+  min-height: 1.2em;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
 }
-.taskPBorder.taskPBorderEmpty{
-  /* border: 1px solid purple; */
-  background-color: #61d47e;
+.vis{
+  visibility: visible;
 }
+
 #wordContainer {
   border: 1px solid lightgrey;
   max-width: 8em;
@@ -255,7 +261,13 @@ p {
   width: 100%;
   display: grid;
   justify-content: center;
+  align-items: center;
   font-size: 1.2em;
   height: 120%;
   border: 1px solid darkgrey;
+  color: rgb(100, 100, 100);
+  /* visibility: hidden; */
 }
+/* #goToNext.visible{
+  visibility: visible;
+} */

@@ -6,16 +6,19 @@ import Task from './Task'
 import Words from './Words'
 import { useState } from 'react'
 import CheckAnswer from './CheckAnswer'
-import AnswerReply from './AnswerReply'
+import FeedbackBox from './FeedbackBox'
 import $ from "jquery"
 
 
 const ContentContainer = () => {
-  // $(".taskPBorder").text("").addClass(".taskPBorderEmpty");
+
+  const [onload, setOnload] = useState(true)
 
   const onClickedWord = (clickedWord) => {
     console.log("click", clickedWord);
+    setOnload(false)
     $("#resultBox").removeClass();
+    $("#resultText").text("...");
 
     if (previousClickedWord === '') {
       setWords(words.filter((word) => word !== clickedWord))
@@ -38,14 +41,19 @@ const ContentContainer = () => {
         answer = true
         $("#resultBox").removeClass();
         $("#resultBox").addClass("riktig");
+        $("#resultText").text("Riktig!"); //TODO: Set correct icon
+        $("#goToNext").text("Neste oppgave -->"); //TODO: Set arrow icon
+        // $("#goToNext").addClass("visible");
         setDisabled(true)
       }
       else {
         answer = false
         $("#resultBox").removeClass();
         $("#resultBox").addClass("feil");
+        $("#resultText").text("Feil. Prøv igjen!"); //TODO: Set wrong icon
       }
     console.log(answer)
+
   }
 
   const question = 'Hvilket ord mangler?'
@@ -68,6 +76,7 @@ const ContentContainer = () => {
     'Eritrea'
   ])
 
+
   const missingWord = 'familie'
 
   const [missingWordIndex] = useState(sentence.indexOf(missingWord))
@@ -77,10 +86,10 @@ const ContentContainer = () => {
       <ContentHeader></ContentHeader>
       <ProgressBar></ProgressBar>
       <Question question={question}></Question>
-      <Task missingWord={missingWord} previousClickedWord={previousClickedWord} sentence={sentence} missingWordIndex={missingWordIndex}></Task>
+      <Task missingWord={missingWord} onload={onload} previousClickedWord={previousClickedWord} sentence={sentence} missingWordIndex={missingWordIndex}></Task>
       <Words onClick={onClickedWord} words={words} disabled={disabled} missingWord={missingWord}></Words>
       <CheckAnswer onClick={checkAnswer} disabled={disabled}></CheckAnswer>
-      <AnswerReply></AnswerReply>
+      <FeedbackBox></FeedbackBox>
     </div>
   )
 }

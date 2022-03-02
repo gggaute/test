@@ -6,7 +6,7 @@ const AnswerReply = () => {
   return (
     <div id="resultBox">
       <div id="resultText">{"..."}</div>
-      <button id="goToNext">{""}</button>
+      <button id="goToNext">{"..."}</button>
     </div>
   )
 }
