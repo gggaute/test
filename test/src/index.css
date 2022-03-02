@@ -189,3 +189,7 @@ p {
   height: 120%;
   border: 1px solid darkgrey;
 }
+.empty {
+  color: white;
+  border: 0.1em solid grey;
+}

@@ -22,9 +22,7 @@ const ContentContainer = () => {
     }
     else {
       setSentence(sentence.map((w) => ((w === previousClickedWord)) ? w = clickedWord : w = w))
-      setWords([...words, previousClickedWord])
-      console.log(words)
-      setWords(words.filter((word) => word !== clickedWord))
+      setWords([...words.filter(word => word !== clickedWord), previousClickedWord])
     }
     setPreviousClickedWord(clickedWord)
   }
@@ -56,14 +54,14 @@ const ContentContainer = () => {
   const [sentence, setSentence] = useState([
     'Yosef',
     'sin',
-    'familie',
+    "familie",
     'bor',
     'i',
     'Eritrea'
   ])
 
-  const [missingWord, setMissingWord] = useState('familie')
-
+  const missingWord = 'familie'
+  
   return (
     <div className='wrapper'>
       <ContentHeader></ContentHeader>
