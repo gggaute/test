@@ -1,11 +1,12 @@
-import React, { createElement } from 'react'
+import React from 'react'
 import Word from './Word'
 
-const Words = ({ onClick, words, missingWord }) => {
+const Words = ({ onClick, words, missingWord, disabled }) => {
+
   return (
     <div className='word-grid'>
       {
-        words.map((word) => (<Word word={word} missingWord={missingWord} onClick={onClick}></Word>))
+        words.map((word) => (<Word word={word} missingWord={missingWord} disabled={disabled} onClick={onClick}></Word>))
       }
     </div>
   )

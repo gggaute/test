@@ -1,9 +1,26 @@
 import React from 'react'
+import $ from "jquery"
 
-const Task = ({ sentence, missingWord }) => {
+const Task = ({ sentence, onload, missingWord, missingWordIndex }) => {
+
+  const checkStart = (word) => {
+    if(onload){
+      return ""
+    }
+    else{
+      $(".taskPBorder").addClass("vis");
+      return word
+    }
+  }
+
+
   return ( 
     <div className='task'>
-      {sentence.map((word) => (word !== missingWord ? <p> {word} </p> : <p className='empty'> {word} </p>))}
+      {sentence.map((word, i) => (i === missingWordIndex ?
+        <div id="wordContainer"> <p className="taskPBorder"> {checkStart(word)} </p> </div>
+          :
+        <p> {word} </p>
+      ))}
     </div>
   )
 }
